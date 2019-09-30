@@ -2,19 +2,31 @@ package com.black3.app.kotlinfromscratchopenclassrooms
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import java.lang.Exception
+import java.lang.IllegalArgumentException
 
 class MainActivity : AppCompatActivity() {
-    var funFromClassIterator = iterator()
-    var funFromClass = printlnFromClass()
-    var funFromUser = printUserAge()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        funFromClassIterator
-        funFromClass
+        iterator()
+        printlnFromClass()
         var user = User("holamundo@gmail.com","123456",35)
-        funFromUser
+        printUserAge()
+        whileLoops()
+        forLoops()
+        //TryCatch
+        try {
+            subtractNumber(10,20)
+        }catch (e: Exception){
+            println("Caught!!!")
+        }finally {
+
+        }
+
+        val otherUser = OtherUser("holamundo@gmail.com",null)
+        val password = otherUser.password ?: fail("No password and password is required")
 
         val s1 = "123"
         println(s1.toIntOrNull()) // 123
